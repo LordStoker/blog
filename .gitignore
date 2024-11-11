@@ -5,6 +5,10 @@
 /public/storage
 /storage/*.key
 /storage/pail
+<<<<<<< HEAD
+=======
+/vendor
+>>>>>>> e43213e3ac5dbec79d55ca4c84cd9799409c601b
 .env.backup
 .env.production
 .phpactor.json
