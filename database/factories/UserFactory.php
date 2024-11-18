@@ -25,10 +25,11 @@ class UserFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            'email' => fake()->unique()->safeEmail(), //Valor único en toda la tabla
+            'email_verified_at' => now(), //Día y hora actual con carbon
+            'password' => static::$password ??= Hash::make('12345678'), //?? -> Si no hay password, se crea uno
+            'role' => fake()->randomElement($array = array ('admin', 'user')), // Crea un elemento aleatorio de un array con esos 2 valores
+            'remember_token' => Str::random(10), //10 letras aleatorias
         ];
     }
 
