@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
-use App\Models\Post;
+
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
     //
-    public function post()
+    public function comments()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Comment::class);
     }
 }
