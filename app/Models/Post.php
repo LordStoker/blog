@@ -13,21 +13,21 @@ class Post extends Model
 {
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class); // N:1
     }
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class); // N:M
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class); // N:1
     }
 
     public function comments(){
-        return $this->hasMany(Comment::class); // M:N (amb atributs)
+        return $this->hasMany(Comment::class); // 1:N
     }
 
 }
