@@ -20,12 +20,18 @@ class CategorySeeder extends Seeder
 
         $jsonData = file_get_contents("C:\\temp\\baleart\\categories.json");
         $categories = json_decode($jsonData, true);
+        if ($jsonData === false || $categories === null) {
+            throw new \Exception("Error al leer o procesar el JSON.");
+        }
 
         foreach ($categories['categories']['category'] as $category) {
-            Category::create([
-                'title' => $category['Nom'],
-                'url_clean' => $category['url'],
-            ]);
+            if(isset($category['Nom'], $category['url'])) {
+                Category::create([
+                    'title' => $category['Nom'],
+                    'url_clean' => $category['url'],
+                ]);
+            }
+
         }
     }
 }
