@@ -24,10 +24,10 @@ class DatabaseSeeder extends Seeder
         //Llamamos a los seeders para que creen los datos manuales.
         $this->call(CategorySeeder::class);
         $this->call(UserSeeder::class);
-        $this->call(TagSeeder::class);
-        $this->call(PostSeeder::class);
-        $this->call(CommentSeeder::class);
-        $this->call(ImageSeeder::class);
+        // $this->call(TagSeeder::class);
+        // $this->call(PostSeeder::class);
+        // $this->call(CommentSeeder::class);
+        // $this->call(ImageSeeder::class);
 
         
         // User::factory(10)->create();
