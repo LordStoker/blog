@@ -2,13 +2,15 @@
 
 namespace Database\Seeders;
 
-use App\Models\Tag;
-use App\Models\Post;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\User;
-use App\Models\Category;
+
+use Database\Seeders\TagSeeder;
 use Illuminate\Database\Seeder;
+use Database\Seeders\PostSeeder;
 use Database\Seeders\UserSeeder;
+use Database\Seeders\ImageSeeder;
+use Database\Seeders\CommentSeeder;
 use Database\Seeders\CategorySeeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -22,6 +24,12 @@ class DatabaseSeeder extends Seeder
         //Llamamos a los seeders para que creen los datos manuales.
         $this->call(CategorySeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(TagSeeder::class);
+        $this->call(PostSeeder::class);
+        $this->call(CommentSeeder::class);
+        $this->call(ImageSeeder::class);
+        $this->call(Post_TagSeeder::class);
+        
         // User::factory(10)->create();
 
         // User::factory()->create([
