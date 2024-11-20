@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PostSeeder::class);
         $this->call(CommentSeeder::class);
         $this->call(ImageSeeder::class);
-        $this->call(Post_TagSeeder::class);
+
         
         // User::factory(10)->create();
 

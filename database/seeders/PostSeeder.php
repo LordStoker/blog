@@ -29,7 +29,7 @@ class PostSeeder extends Seeder
         $post2->content = 'content2';
         $post2->posted = 'not';
         $post2->image = 'image2';
-        $post2->category_id = 2;
+        $post2->category_id = 2; // No permitirá darle un id que no exista en Category
         $post2->user_id = 1;
         $post2->save();
 
