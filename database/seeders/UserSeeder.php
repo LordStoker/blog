@@ -14,11 +14,21 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = new User();
-        $user->name = "admin";
-        $user->email = "admin@abc.com";
-        $user->password = Hash::make("12345678");
-        $user->role = "admin";
-        $user->save();
+        $jsonData = file_get_contents("C:\\temp\\baleart\\usuaris.json");
+        $users = json_decode($jsonData, true);
+        if ($jsonData === false || $users === null) {
+            throw new \Exception("Error al leer o procesar el JSON.");
+        }
+
+        foreach ($users['usuaris']['usuari'] as $user) {
+             if(isset($user['nom'], $user['dni'],$user['email'], $user['password'])) {
+                User::create([
+                    'name' => $user['nom'],
+                    'email' => $user['email'],
+                    'password' => Hash::make($user['password']),
+                ]);
+            }
+
+        }
     }
 }
